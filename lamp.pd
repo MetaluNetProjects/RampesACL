@@ -164,7 +164,7 @@
 #X connect 69 4 34 0;
 #X connect 70 0 57 0;
 #X restore 9 165 pd pan-modes;
-#N canvas 2356 503 982 686 lum-modes 1;
+#N canvas 2356 503 982 686 lum-modes 0;
 #X obj 18 16 r update-bang;
 #X obj 18 66 f;
 #X obj 285 59 spigot;
@@ -326,7 +326,7 @@
 #X obj 395 183 spigot;
 #X obj 395 158 r lum-\$1-1-snd;
 #X obj 395 208 s lum-\$1-\$2-rcv;
-#N canvas 2574 852 498 351 pan-speed 1;
+#N canvas 2574 852 498 385 pan-speed 0;
 #X obj 15 21 r pan-\$1-\$2-val;
 #X obj 15 46 t f f;
 #X obj 15 75 -;
