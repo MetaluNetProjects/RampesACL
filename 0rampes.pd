@@ -1,4 +1,4 @@
-#N canvas 202 81 1163 662 12;
+#N canvas 202 368 1163 662 12;
 #X declare -path AutoPreset -path ggee -path zexy -lib zexy -path iemlib
 -lib iemlib;
 #X declare -path Fraise;
@@ -106,7 +106,7 @@
 -1 -1 0 1;
 #X obj 552 97 * 1;
 #X obj 552 143 s main-pattern-snd;
-#N canvas 1009 152 356 424 Fraise 1;
+#N canvas 819 117 546 591 Fraise 1;
 #X obj 24 331 fruit/send2 fruit1;
 #X floatatom 24 241 8 0 255 0 - - -;
 #X obj 27 211 hsl 128 15 0 255 0 0 empty empty value -2 -8 0 10 -262144
@@ -116,16 +116,65 @@
 #X obj 24 270 pack f 1;
 #X obj 21 11 declare -path Fraise;
 #X obj 21 130 fruit/fruit 1 fruit1 10 fw_dmx;
-#X obj 211 240 r 2DMX;
-#X msg 211 266 c 30 i \$1 c \$2;
-#X obj 21 37 pied/pied 0;
+#X obj 220 11 r 2DMX;
+#X msg 181 541 c 30 i \$1 c \$2;
+#X obj 22 37 pied/pied 0 31321;
+#X obj 273 12 table \$0-dmxtable 512;
+#X obj 220 37 s \$0-dmxtable;
+#X obj 221 65 fruit/receive fruit1;
+#X obj 221 89 route present;
+#X obj 221 113 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 221 157 i;
+#X obj 255 158 + 1;
+#X obj 255 182 mod 6;
+#X obj 253 255 array get \$0-dmxtable 0 16;
+#X obj 221 207 * 16;
+#X obj 221 231 t f f;
+#X obj 221 476 list append;
+#X obj 253 279 t b a b;
+#X msg 221 451 list i \$1;
+#X obj 276 305 list split 1;
+#X obj 276 351 list prepend c;
+#X obj 276 375 list append;
+#X obj 276 399 t a;
+#X obj 253 423 list;
+#X obj 316 327 t a;
+#X obj 221 500 list trim;
+#X obj 221 133 metro 3;
 #X connect 1 0 5 0;
 #X connect 2 0 1 0;
 #X connect 3 0 5 1;
 #X connect 4 0 0 0;
 #X connect 5 0 4 0;
-#X connect 8 0 9 0;
+#X connect 8 0 12 0;
 #X connect 9 0 0 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 32 0;
+#X connect 16 0 17 0;
+#X connect 16 0 20 0;
+#X connect 17 0 18 0;
+#X connect 18 0 16 1;
+#X connect 19 0 23 0;
+#X connect 20 0 21 0;
+#X connect 21 0 24 0;
+#X connect 21 1 19 0;
+#X connect 22 0 31 0;
+#X connect 23 0 29 0;
+#X connect 23 1 25 0;
+#X connect 23 2 27 1;
+#X connect 24 0 22 0;
+#X connect 25 0 26 0;
+#X connect 25 1 30 0;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 28 0 27 1;
+#X connect 28 0 29 1;
+#X connect 29 0 22 1;
+#X connect 30 0 25 0;
+#X connect 31 0 0 0;
+#X connect 32 0 16 0;
 #X restore 184 34 pd Fraise;
 #X connect 3 0 2 1;
 #X connect 3 0 4 0;
@@ -150,9 +199,9 @@
 #X obj 622 560 tgl 40 0 vu-on vu-on vu-on 0 -10 0 12 -228856 -1 -1
 1 1;
 #X obj 1107 32 vsl 40 500 0 1 0 0 lummaster-snd lummaster-rcv master
-0 -9 0 12 -257985 -1 -1 49900 1;
+0 -9 0 12 -257985 -1 -1 0 1;
 #X obj 714 539 hsl 170 20 0 10000 0 0 main-fadeToScene-time main-fadeToScene-time
-fadeTime:1.5_sec 10 10 0 12 -228856 -258113 -1 2661 1;
+fadeTime:1.5_sec 10 10 0 12 -228856 -258113 -1 0 1;
 #X obj 892 540 64patterns-fade main-fade;
 #X obj 712 574 r 2DMX;
 #X obj 712 599 spigot;

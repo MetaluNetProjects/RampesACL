@@ -24,8 +24,18 @@ void fraiseReceive() // receive raw bytes
 {
 	int i;
 	unsigned char c=fraiseGetChar(); // get first byte
+	unsigned char l = fraiseGetLen();
 	switch(c) {
-		PARAM_INT(30,i); DMXSet(i, fraiseGetChar()); break; // if first byte is 30 then get DMX channel (int) and value (char).
+		case 30:
+			i = fraiseGetInt();
+			l -= 3;
+			while(l) {
+				DMXSet(i, fraiseGetChar());
+				i++;
+				l--;
+			}
+			break;
+		//PARAM_INT(30,i); DMXSet(i, fraiseGetChar()); break; // if first byte is 30 then get DMX channel (int) and value (char).
 	}
 }
 
