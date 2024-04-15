@@ -1,8 +1,9 @@
-#N canvas 2130 526 1163 685 12;
-#X declare -path AutoPreset -path ggee -path zexy -lib zexy -path iemlib -lib iemlib;
+#N canvas 202 81 1163 662 12;
+#X declare -path AutoPreset -path ggee -path zexy -lib zexy -path iemlib
+-lib iemlib;
 #X declare -path Fraise;
-#N canvas 2003 904 838 300 guts 1;
-#N canvas 1300 329 544 411 CS4-chans-doc 1;
+#N canvas 527 443 838 300 guts 1;
+#N canvas 821 329 544 411 CS4-chans-doc 1;
 #X text 14 14 1: dimmer 1;
 #X text 14 31 2: dimmer 2;
 #X text 13 47 3: dimmer 3;
@@ -13,7 +14,8 @@
 #X text 11 169 10: pan 1 fine;
 #X text 11 130 8: global tilt fine;
 #X text 57 95 6: global pan fine;
-#X text 61 288 17: pan mode normal=0-63 mode1=64-127 mode2=127-255;
+#X text 61 288 17: pan mode normal=0-63 mode1=64-127 mode2=127-255
+;
 #X text 13 308 18: motor speed 8 levels: max=0-31 min=224-255;
 #X text 62 333 19: reset all motors (128-191);
 #X text 62 351 20: aux;
@@ -27,21 +29,24 @@
 #X obj 24 90 apmaster main;
 #X obj 25 156 apmasterfile main main-patterns.txt;
 #X obj 267 125 r \$0-save-main;
-#X obj 293 157 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
+#X obj 293 157 bng 20 250 50 0 empty empty empty 0 -10 0 12 -262144
+-1 -1;
 #X obj 25 128 r \$0-reload-main;
 #X obj 147 127 loadbang;
 #X obj 426 54 loadbang;
-#X obj 426 79 tgl 20 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0 1;
+#X obj 426 79 tgl 20 0 empty empty empty 0 -10 0 12 -262144 -1 -1 1
+1;
 #X obj 426 104 metro 20;
 #X obj 426 129 s update-bang;
-#X obj 27 190 declare -path AutoPreset -path ggee -path zexy -lib zexy -path iemlib -lib iemlib;
+#X obj 27 190 declare -path AutoPreset -path ggee -path zexy -lib zexy
+-path iemlib -lib iemlib;
 #X obj 129 90 patternFade main;
 #N canvas 2459 515 770 365 nanoKontrol 0;
 #X obj 27 18 ctlin, f 15;
 #X obj 27 43 list prepend;
 #X obj 27 68 s MIDICTL;
 #X obj 28 110 r MIDICTL;
-#X floatatom 128 69 5 0 0 0 - - - 0;
+#X floatatom 128 69 5 0 0 0 - - -;
 #X obj 128 45 change;
 #X obj 28 162 / 127;
 #X obj 28 187 s lummaster-rcv;
@@ -64,7 +69,7 @@
 #X obj 533 191 + 8;
 #X obj 630 189 + 16;
 #X obj 431 240 f;
-#X floatatom 431 265 5 0 0 0 - - - 0;
+#X floatatom 431 265 5 0 0 0 - - -;
 #X obj 431 294 s main-fade-patternButton-rcv;
 #X connect 0 0 1 0;
 #X connect 0 1 1 1;
@@ -97,28 +102,30 @@
 #X connect 27 0 28 0;
 #X restore 286 36 pd nanoKontrol;
 #X msg 552 120 _all_ load \$1;
-#X obj 555 72 hsl 170 20 0 1 0 0 empty empty empty -2 -10 0 12 #fcfcfc #000000 #000000 0 1;
+#X obj 555 72 hsl 170 20 0 1 0 0 empty empty empty -2 -10 0 12 -262144
+-1 -1 0 1;
 #X obj 552 97 * 1;
 #X obj 552 143 s main-pattern-snd;
-#N canvas 1208 125 356 424 Fraise 1;
+#N canvas 1009 152 356 424 Fraise 1;
 #X obj 24 331 fruit/send2 fruit1;
-#X floatatom 24 241 8 0 255 0 - - - 0;
-#X obj 27 211 hsl 128 15 0 255 0 0 empty empty value -2 -8 0 10 #fcfcfc #000000 #000000 0 1;
-#X floatatom 89 241 8 1 255 1 channel - - 0;
+#X floatatom 24 241 8 0 255 0 - - -;
+#X obj 27 211 hsl 128 15 0 255 0 0 empty empty value -2 -8 0 10 -262144
+-1 -1 0 1;
+#X floatatom 89 241 8 1 255 1 channel - -;
 #X msg 24 301 c 30 i \$2 c \$1;
 #X obj 24 270 pack f 1;
 #X obj 21 11 declare -path Fraise;
-#X obj 21 38 pied/pied 1;
 #X obj 21 130 fruit/fruit 1 fruit1 10 fw_dmx;
 #X obj 211 240 r 2DMX;
 #X msg 211 266 c 30 i \$1 c \$2;
+#X obj 21 37 pied/pied 0;
 #X connect 1 0 5 0;
 #X connect 2 0 1 0;
 #X connect 3 0 5 1;
 #X connect 4 0 0 0;
 #X connect 5 0 4 0;
-#X connect 9 0 10 0;
-#X connect 10 0 0 0;
+#X connect 8 0 9 0;
+#X connect 9 0 0 0;
 #X restore 184 34 pd Fraise;
 #X connect 3 0 2 1;
 #X connect 3 0 4 0;
@@ -132,20 +139,26 @@
 #X connect 16 0 14 0;
 #X restore 623 609 pd guts;
 #X obj 7 538 64patterns main;
-#X obj 543 554 bng 20 250 50 0 \$0-save-main \$0-save-main SAVE 0 -10 0 12 #ff0400 #000000 #000000;
-#X obj 544 593 bng 20 250 50 0 \$0-reload-main \$0-reload-main RELOAD 0 -10 0 12 #00ff04 #000000 #000000;
+#X obj 543 554 bng 20 250 50 0 \$0-save-main \$0-save-main SAVE 0 -10
+0 12 -258113 -1 -1;
+#X obj 544 593 bng 20 250 50 0 \$0-reload-main \$0-reload-main RELOAD
+0 -10 0 12 -4034 -1 -1;
 #X obj 7 8 CS4 1 1;
 #X obj 281 8 CS4 2 21;
 #X obj 556 8 CS4 3 41;
 #X obj 830 8 CS4 4 61;
-#X obj 622 560 tgl 40 0 vu-on vu-on vu-on 0 -10 0 12 #dfdfdf #000000 #000000 0 1;
-#X obj 1107 32 vsl 40 500 0 1 0 0 lummaster-snd lummaster-rcv master 0 -9 0 12 #faff00 #000000 #000000 0 1;
-#X obj 714 539 hsl 170 20 0 10000 0 0 main-fadeToScene-time main-fadeToScene-time fadeTime:0.9_sec 10 10 0 12 #dfdfdf #ff0400 #000000 0 1;
+#X obj 622 560 tgl 40 0 vu-on vu-on vu-on 0 -10 0 12 -228856 -1 -1
+1 1;
+#X obj 1107 32 vsl 40 500 0 1 0 0 lummaster-snd lummaster-rcv master
+0 -9 0 12 -257985 -1 -1 49900 1;
+#X obj 714 539 hsl 170 20 0 10000 0 0 main-fadeToScene-time main-fadeToScene-time
+fadeTime:1.5_sec 10 10 0 12 -228856 -258113 -1 2661 1;
 #X obj 892 540 64patterns-fade main-fade;
 #X obj 712 574 r 2DMX;
 #X obj 712 599 spigot;
 #X obj 712 624 print;
-#X obj 766 572 tgl 20 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000 0 1;
+#X obj 766 572 tgl 20 0 empty empty empty 0 -10 0 12 -262144 -1 -1
+0 1;
 #X connect 12 0 13 0;
 #X connect 13 0 14 0;
 #X connect 15 0 13 1;

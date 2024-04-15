@@ -1,19 +1,32 @@
-#N canvas 2016 497 631 556 12;
-#X obj 11 27 cnv 20 268 507 empty empty empty 20 12 0 12 #7c7c7c #404040 0;
+#N canvas 52 98 631 556 12;
+#X obj 11 27 cnv 20 268 507 empty empty empty 20 12 0 12 -128992 -66577
+0;
 #X obj 14 32 lamp \$1 1;
-#X obj 18 454 hsl 250 20 0 1 0 0 tilt-\$1-snd tilt-\$1-rcv tilt 100 10 0 12 #00faff #000000 #000000 0 1;
-#X obj 18 477 hsl 250 8 0 1 0 0 tiltvu-\$1-snd tiltvu-\$1-rcv empty -2 -10 0 12 #c6feff #000000 #000000 0 1;
-#X obj 15 410 hradio 15 1 0 5 panmode-\$1-snd panmode-\$1-rcv constant 0 -5 0 8 #00ff04 #000000 #ffffff 0;
-#X obj 119 405 hsl 70 20 0 1 0 0 panmode_amp-\$1-snd panmode_amp-\$1-rcv amp 15 7 0 10 #00ff04 #000000 #7c7c7c 0 1;
-#X obj 15 434 hradio 15 1 0 5 lummode-\$1-snd lummode-\$1-rcv constant 0 -5 0 8 #faff00 #000000 #ffffff 0;
-#X obj 119 429 hsl 70 20 0 1 0 0 lummode_amp-\$1-snd lummode_amp-\$1-rcv amp 15 7 0 10 #faff00 #000000 #606060 0 1;
-#X obj 198 405 hsl 70 20 0 1 0 0 panmode_speed-\$1-snd panmode_speed-\$1-rcv speed 10 7 0 10 #00ff04 #000000 #7c7c7c 0 1;
-#X obj 198 429 hsl 70 20 0 1 0 0 lummode_speed-\$1-snd lummode_speed-\$1-rcv speed 10 7 0 10 #faff00 #000000 #606060 0 1;
-#X obj 15 495 hradio 15 1 0 5 tiltmode-\$1-snd tiltmode-\$1-rcv constant 0 -5 0 8 #00faff #000000 #ffffff 0;
-#X obj 119 490 hsl 70 20 0 1 0 0 tiltmode_amp-\$1-snd tiltmode_amp-\$1-rcv amp 15 7 0 10 #00faff #000000 #7c7c7c 0 1;
-#X obj 198 490 hsl 70 20 0 1 0 0 tiltmode_speed-\$1-snd tiltmode_speed-\$1-rcv speed 10 7 0 10 #00faff #000000 #7c7c7c 0 1;
+#X obj 18 454 hsl 250 20 0 1 0 0 tilt-\$1-snd tilt-\$1-rcv tilt 100
+10 0 12 -4032 -1 -1 0 1;
+#X obj 18 477 hsl 250 8 0 1 0 0 tiltvu-\$1-snd tiltvu-\$1-rcv empty
+-2 -10 0 12 -204800 -1 -1 0 1;
+#X obj 15 410 hradio 15 1 0 5 panmode-\$1-snd panmode-\$1-rcv constant
+0 -5 0 8 -4034 -1 -262144 0;
+#X obj 119 405 hsl 70 20 0 1 0 0 panmode_amp-\$1-snd panmode_amp-\$1-rcv
+amp 15 7 0 10 -4034 -1 -128992 0 1;
+#X obj 15 434 hradio 15 1 0 5 lummode-\$1-snd lummode-\$1-rcv constant
+0 -5 0 8 -257985 -1 -262144 0;
+#X obj 119 429 hsl 70 20 0 1 0 0 lummode_amp-\$1-snd lummode_amp-\$1-rcv
+amp 15 7 0 10 -257985 -1 -99865 0 1;
+#X obj 198 405 hsl 70 20 0 1 0 0 panmode_speed-\$1-snd panmode_speed-\$1-rcv
+speed 10 7 0 10 -4034 -1 -128992 0 1;
+#X obj 198 429 hsl 70 20 0 1 0 0 lummode_speed-\$1-snd lummode_speed-\$1-rcv
+speed 10 7 0 10 -257985 -1 -99865 0 1;
+#X obj 15 495 hradio 15 1 0 5 tiltmode-\$1-snd tiltmode-\$1-rcv constant
+0 -5 0 8 -4032 -1 -262144 0;
+#X obj 119 490 hsl 70 20 0 1 0 0 tiltmode_amp-\$1-snd tiltmode_amp-\$1-rcv
+amp 15 7 0 10 -4032 -1 -128992 0 1;
+#X obj 198 490 hsl 70 20 0 1 0 0 tiltmode_speed-\$1-snd tiltmode_speed-\$1-rcv
+speed 10 7 0 10 -4032 -1 -128992 0 1;
 #X obj 299 197 apf main tilt-\$1 tilt-\$1;
-#X obj 16 513 hsl 250 20 0 1 0 0 motorspeed-\$1-snd motorspeed-\$1-rcv motorspeed:1 100 10 0 12 #ff8300 #000000 #000000 0 1;
+#X obj 16 513 hsl 180 20 0 1 0 0 motorspeed-\$1-snd motorspeed-\$1-rcv
+motorspeed:1 50 10 0 12 -260097 -1 -1 0 1;
 #X obj 300 249 apf main tiltmode_amp-\$1 tiltmode_amp-\$1;
 #X obj 300 272 apf main tiltmode_speed-\$1 tiltmode_speed-\$1;
 #X obj 300 304 apf main motorspeed-\$1 motorspeed-\$1;
@@ -24,7 +37,7 @@
 #X obj 297 87 apf main panmode_speed-\$1 panmode_speed-\$1;
 #X obj 298 146 apf main lummode_amp-\$1 lummode_amp-\$1;
 #X obj 298 168 apf main lummode_speed-\$1 lummode_speed-\$1;
-#N canvas 2337 698 524 547 labels 1;
+#N canvas 2337 698 524 547 labels 0;
 #X obj 14 60 sel 0 1 2 3 4, f 37;
 #X msg 83 85 avant;
 #X msg 128 85 arriere;
@@ -119,7 +132,7 @@
 #X connect 39 0 40 0;
 #X connect 41 0 42 0;
 #X restore 296 11 pd labels;
-#N canvas 2122 556 954 672 tilt-modes 0;
+#N canvas 329 81 954 662 tilt-modes 0;
 #X obj 36 41 r tilt-\$1-snd;
 #X obj 18 16 r update-bang;
 #X obj 18 66 f;
@@ -267,8 +280,9 @@
 #X connect 65 3 27 0;
 #X connect 65 4 48 0;
 #X connect 66 0 7 0;
-#X restore 300 344 pd tilt-modes;
-#X obj 210 12 tgl 18 0 onetoall-\$1-snd onetoall-\$1-rcv 1->all 20 9 0 12 #fcfcfc #000000 #000000 0 1;
+#X restore 300 371 pd tilt-modes;
+#X obj 210 12 tgl 18 0 onetoall-\$1-snd onetoall-\$1-rcv 1->all 20
+9 0 12 -262144 -1 -1 1 1;
 #N canvas 2015 927 450 300 pan-osc 0;
 #X obj 143 142 f;
 #X obj 143 167 +, f 5;
@@ -286,11 +300,11 @@
 #X connect 4 0 3 0;
 #X connect 5 0 4 0;
 #X connect 6 0 0 0;
-#X restore 300 371 pd pan-osc;
+#X restore 300 398 pd pan-osc;
 #X obj 299 224 apf main tiltmode-\$1 tiltmode-\$1;
 #X obj 297 121 apf main lummode-\$1 lummode-\$1;
 #X obj 296 39 apf main panmode-\$1 panmode-\$1;
-#N canvas 2356 828 627 436 dmx 1;
+#N canvas 738 307 627 436 dmx 0;
 #X obj 27 21 r dmx-\$1;
 #X obj 27 74 route p l, f 37;
 #X obj 27 48 list trim;
@@ -300,7 +314,7 @@
 #X obj 339 38 * 65535;
 #X obj 339 63 clip 0 65535;
 #X obj 155 112 dmx8 1 \$2;
-#X obj 27 114 dmx16 9 \$2;
+#X obj 27 286 dmx16 9 \$2;
 #X msg 339 138 1 \$1;
 #X obj 339 166 dmx16 7 \$2;
 #X msg 474 89 1 \$1;
@@ -308,6 +322,22 @@
 #X obj 474 64 * 32;
 #X obj 474 39 - 0.5;
 #X obj 474 117 dmx8 18 \$2;
+#X msg 339 299 1 \$1;
+#X obj 339 323 dmx8 17 \$2;
+#X obj 339 230 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#X obj 339 250 * 64;
+#X obj 339 274 + 32;
+#X obj 128 174 unpack f f;
+#X obj 128 199 t f f;
+#X obj 128 316 pack f f;
+#X obj 160 221 mod 2;
+#X obj 160 245 sel 0 1;
+#X obj 160 272 f;
+#X obj 190 273 f;
+#X obj 218 201 * -1;
+#X obj 218 225 + 65535;
+#X obj 339 204 r panmotmode-\$1-snd;
 #X connect 0 0 2 0;
 #X connect 1 0 9 0;
 #X connect 1 1 8 0;
@@ -322,5 +352,25 @@
 #X connect 13 0 15 0;
 #X connect 14 0 12 0;
 #X connect 15 0 14 0;
-#X restore 300 421 pd dmx;
+#X connect 17 0 18 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 17 0;
+#X connect 22 0 23 0;
+#X connect 22 1 27 1;
+#X connect 22 1 29 0;
+#X connect 23 0 24 0;
+#X connect 23 1 25 0;
+#X connect 25 0 26 0;
+#X connect 26 0 27 0;
+#X connect 26 1 28 0;
+#X connect 27 0 24 1;
+#X connect 28 0 24 1;
+#X connect 29 0 30 0;
+#X connect 30 0 28 1;
+#X connect 31 0 19 0;
+#X restore 300 448 pd dmx;
+#X obj 208 514 hradio 20 1 0 3 panmotmode-\$1-snd panmotmode-\$1-rcv
+pan_mode 4 10 0 10 -4034 -1 -257985 1;
+#X obj 300 335 apf main panmotmode-\$1 panmotmode-\$1;
 #X coords 0 -1 1 1 270 525 1 10 10;
