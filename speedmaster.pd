@@ -1,0 +1,11 @@
+#N canvas 2 110 450 300 12;
+#X obj 56 69 *;
+#X obj 85 69 t b f;
+#X obj 56 43 r \$1_speed-E-snd;
+#X obj 128 70 r speedmaster\$2-snd;
+#X obj 56 96 s \$1_speed-\$2-val;
+#X connect 0 0 4 0;
+#X connect 1 0 0 0;
+#X connect 1 1 0 1;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
