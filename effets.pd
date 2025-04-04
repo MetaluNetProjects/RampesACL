@@ -1,15 +1,26 @@
 #N canvas 52 98 622 334 12;
-#X obj 11 27 cnv 20 238 110 empty empty empty 20 12 0 12 #404040 #404040 0;
-#X obj 15 40 hradio 15 1 0 5 panmode-\$1-snd panmode-\$1-rcv constant 0 -5 0 8 #00fc04 #000000 #fcfcfc 0;
-#X obj 96 35 hsl 70 20 0 1 0 0 panmode_amp-\$1-snd panmode_amp-\$1-rcv amp 15 7 0 10 #00fc04 #000000 #7c7c7c 0 1;
-#X obj 15 64 hradio 15 1 0 5 lummode-\$1-snd lummode-\$1-rcv constant 0 -5 0 8 #f8fc00 #000000 #fcfcfc 0;
-#X obj 96 59 hsl 70 20 0 1 0 0 lummode_amp-\$1-snd lummode_amp-\$1-rcv amp 15 7 0 10 #f8fc00 #000000 #606060 0 1;
-#X obj 175 35 hsl 70 20 0 1 0 0 panmode_speed-\$1-snd panmode_speed-\$1-rcv speed 10 7 0 10 #00fc04 #000000 #7c7c7c 0 1;
-#X obj 175 59 hsl 70 20 0 1 0 0 lummode_speed-\$1-snd lummode_speed-\$1-rcv speed 10 7 0 10 #f8fc00 #000000 #606060 0 1;
-#X obj 15 95 hradio 15 1 0 5 tiltmode-\$1-snd tiltmode-\$1-rcv constant 0 -5 0 8 #00f8fc #000000 #fcfcfc 0;
-#X obj 96 90 hsl 70 20 0 1 0 0 tiltmode_amp-\$1-snd tiltmode_amp-\$1-rcv amp 15 7 0 10 #00f8fc #000000 #7c7c7c 0 1;
-#X obj 175 90 hsl 70 20 0 1 0 0 tiltmode_speed-\$1-snd tiltmode_speed-\$1-rcv speed 10 7 0 10 #00f8fc #000000 #7c7c7c 0 1;
-#X obj 16 113 hsl 160 20 0 1 0 0 motorspeed-\$1-snd motorspeed-\$1-rcv motorspeed:1 50 10 0 12 #fc8000 #000000 #000000 0 1;
+#X obj 11 27 cnv 20 238 110 empty empty empty 20 12 0 12 -66577 -66577
+0;
+#X obj 15 40 hradio 15 1 0 5 panmode-\$1-snd panmode-\$1-rcv random
+0 -5 0 8 -4034 -1 -262144 3;
+#X obj 96 35 hsl 70 20 0 1 0 0 panmode_amp-\$1-snd panmode_amp-\$1-rcv
+amp 15 7 0 10 -4034 -1 -128992 6900 1;
+#X obj 15 64 hradio 15 1 0 5 lummode-\$1-snd lummode-\$1-rcv random
+0 -5 0 8 -257985 -1 -262144 3;
+#X obj 96 59 hsl 70 20 0 1 0 0 lummode_amp-\$1-snd lummode_amp-\$1-rcv
+amp 15 7 0 10 -257985 -1 -99865 2900 1;
+#X obj 175 35 hsl 70 20 0 1 0 0 panmode_speed-\$1-snd panmode_speed-\$1-rcv
+speed 10 7 0 10 -4034 -1 -128992 1500 1;
+#X obj 175 59 hsl 70 20 0 1 0 0 lummode_speed-\$1-snd lummode_speed-\$1-rcv
+speed 10 7 0 10 -257985 -1 -99865 4000 1;
+#X obj 15 95 hradio 15 1 0 5 tiltmode-\$1-snd tiltmode-\$1-rcv random
+0 -5 0 8 -4032 -1 -262144 3;
+#X obj 96 90 hsl 70 20 0 1 0 0 tiltmode_amp-\$1-snd tiltmode_amp-\$1-rcv
+amp 15 7 0 10 -4032 -1 -128992 6200 1;
+#X obj 175 90 hsl 70 20 0 1 0 0 tiltmode_speed-\$1-snd tiltmode_speed-\$1-rcv
+speed 10 7 0 10 -4032 -1 -128992 1300 1;
+#X obj 16 113 hsl 160 20 0 1 0 0 motorspeed-\$1-snd motorspeed-\$1-rcv
+motorspeed:4 50 10 0 12 -260097 -1 -1 7200 1;
 #N canvas 2337 698 524 547 labels 0;
 #X obj 14 60 sel 0 1 2 3 4, f 37;
 #X msg 83 85 avant;
@@ -105,7 +116,7 @@
 #X connect 39 0 40 0;
 #X connect 41 0 42 0;
 #X restore 12 148 pd labels;
-#N canvas 508 60 693 417 pan-osc_movmaster 1;
+#N canvas 508 60 693 417 pan-osc_movmaster 0;
 #X obj 24 97 f;
 #X obj 24 122 +, f 5;
 #X obj 24 147 fmod 1;
@@ -194,5 +205,6 @@
 #X obj 268 206 apf main\$3 tiltmode-\$1 tiltmode-\$1;
 #X obj 269 231 apf main\$3 tiltmode_amp-\$1 tiltmode_amp-\$1;
 #X obj 269 254 apf main\$3 tiltmode_speed-\$1 tiltmode_speed-\$1;
-#X obj 269 286 apf main\$3 motorspeed-\$1 motorspeed-\$1;
+#X obj 269 286 list prepend apf main\$3 motorspeed-\$1 motorspeed-\$1
+;
 #X coords 0 -1 1 1 240 128 1 10 10;
